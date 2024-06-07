@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3 th:text="${loginMember.getUsername()} + '님 환영합니다.'">th:text 와 h3태그(정적) 안의 내용은 같은 동작을 해 무시된다.</h3>
+    <h3>hello</h3>
+    <span th:text="'hello Spring'">
+        dd
+    </span>
+    <div th:each="member : ${memberList}"><!-- 향상된 포문역할 -->
+        <h4 th:text="${member.id} + ' : ' + ${member.username}"></h4>
+        <h4>컨트롤러에서 보내는 key 값 으로 받아야된다.</h4>
+    </div>
+</body>
+</html>
